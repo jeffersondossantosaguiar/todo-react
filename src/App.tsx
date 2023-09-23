@@ -14,7 +14,7 @@ function App() {
         <TaskForm />
         <main>
           <TaskHeader />
-          <div>
+          <div className={styles.task}>
             <Task />
           </div>
         </main>

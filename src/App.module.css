@@ -6,5 +6,9 @@
 }
 
 main {
-  padding-top: 64px;
+  padding-top: 4rem;
+}
+
+.task {
+  padding-top: 1.5rem;
 }
