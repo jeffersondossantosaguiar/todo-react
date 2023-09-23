@@ -1,7 +1,5 @@
 .taskHeader {
   display: flex;
-  max-width: 736px;
-  width: 100%;
   justify-content: space-between;
 
   font-weight: 700;

@@ -1,5 +1,6 @@
 import styles from './App.module.css';
 import { Header } from './components/Header';
+import { Task } from './components/Task';
 import { TaskForm } from './components/TaskForm';
 import { TaskHeader } from './components/TaskHeader';
 import './global.css';
@@ -13,6 +14,9 @@ function App() {
         <TaskForm />
         <main>
           <TaskHeader />
+          <div>
+            <Task />
+          </div>
         </main>
 
       </div>
