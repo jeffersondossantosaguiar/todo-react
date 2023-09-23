@@ -6,7 +6,7 @@ import { TaskForm } from './components/TaskForm';
 import { TaskHeader } from './components/TaskHeader';
 import './global.css';
 
-const task = [2];
+const tasks = [1, 2, 3, 4];
 
 function App() {
 
@@ -19,8 +19,10 @@ function App() {
           <TaskHeader />
           <div className={styles.task}>
             {
-              task.length ? (
-                <Task />
+              tasks.length ? (
+                tasks.map(task => {
+                  return (<Task key={task} />);
+                })
               ) : (
                 <Empty />
               )

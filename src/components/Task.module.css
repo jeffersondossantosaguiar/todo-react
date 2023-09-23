@@ -12,6 +12,10 @@
   line-height: 1.4;
 }
 
+.task + .task {
+  margin-top: 12px;
+}
+
 .checkBox {
   appearance: none;
   width: 1.090625rem;
