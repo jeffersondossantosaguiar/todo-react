@@ -12,7 +12,7 @@
   height: 1.1875rem;
 }
 
-span {
+.taskHeader span {
   display: flex;
   justify-content: center;
   align-items: center;

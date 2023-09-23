@@ -9,13 +9,16 @@
   flex: 1;
  
   background: var(--gray-500);
-  border: 1;
+  border: 1px solid var(--gray-700);
   border-radius: 8px;
   resize: none;
   color: var(--gray-100);
-  padding: 1rem;
+  padding: 16px;
+}
 
-  border-color: var(--gray-700);
+.taskForm textarea:focus {
+  outline: transparent;
+  box-shadow: 0 0 0 1px var(--purple-dark);
 }
 
 .taskForm button {

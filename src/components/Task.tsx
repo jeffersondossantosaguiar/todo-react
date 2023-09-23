@@ -1,19 +1,25 @@
-import clipBoard from '../assets/clip-board.svg';
+import { useState } from 'react';
+import { HiOutlineTrash } from 'react-icons/hi';
 import styles from './Task.module.css';
 
-const tasks = [];
-
 export function Task() {
-  if (tasks.length)
-    return (<>
-      <p>TASKS</p>
-    </>);
-  else
-    return (
-      <div className={styles.noTask}>
-        <img src={clipBoard} alt="Clip board" />
-        <strong>Você ainda não tem tarefas cadastradas</strong>
-        <p>Crie tarefas e organize seus itens a fazer</p>
+  const [checked, setChecked] = useState(false);
+
+  function handleChecked() {
+    setChecked(!checked);
+  }
+
+  return (
+    <div className={styles.task}>
+      <div>
+        <input type='checkbox' checked={checked} onChange={handleChecked} className={styles.checkBox} />
       </div>
-    );
+      <span>
+        <label className={checked ? styles.contentChecked : styles.content}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero consectetur assumenda a repellat, quisquam accusamus alias excepturi?</label>
+      </span>
+      <button className={styles.trash}>
+        <HiOutlineTrash size={16} />
+      </button>
+    </div>
+  );
 }
