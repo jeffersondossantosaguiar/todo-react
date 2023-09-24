@@ -30,6 +30,6 @@
   color: var(--blue)
 }
 
-.concludedTasks {
+.completedTasks {
   color: var(--purple)
 }

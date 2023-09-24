@@ -1,5 +1,6 @@
 .task {
   display: flex;
+  justify-content: space-between;
   gap: 12px;
 
   border-radius: 8px;
@@ -16,9 +17,14 @@
   margin-top: 12px;
 }
 
+.task div {
+  display: flex;
+  gap: 12px
+}
+
 .checkBox {
   appearance: none;
-  width: 1.090625rem;
+  min-width: 1.090625rem;
   height: 1.090625rem;
   border: 2px solid var(--blue);
   border-radius: 100%;

@@ -2,9 +2,10 @@ import styles from './TaskHeader.module.css';
 
 interface TaskHeaderProps {
   createdTasks: number;
+  completedTasks: number;
 }
 
-export function TaskHeader({ createdTasks }: TaskHeaderProps) {
+export function TaskHeader({ createdTasks, completedTasks }: TaskHeaderProps) {
   return (
     <div className={styles.taskHeader}>
       <div >
@@ -14,9 +15,9 @@ export function TaskHeader({ createdTasks }: TaskHeaderProps) {
         </span>
       </div>
       <div>
-        <p className={styles.concludedTasks}>Concluídas</p>
+        <p className={styles.completedTasks}>Concluídas</p>
         <span>
-          2 de {createdTasks}
+          {completedTasks} de {createdTasks}
         </span>
       </div>
     </div>

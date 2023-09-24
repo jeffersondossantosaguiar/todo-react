@@ -1,23 +1,20 @@
 import { useState } from 'react';
 import { HiOutlineTrash } from 'react-icons/hi';
+import { ITask } from '../models/Task';
 import styles from './Task.module.css';
-
-export interface ITask {
-  id: number,
-  content: string,
-  isChecked: boolean;
-}
 
 interface ITaskProps {
   task: ITask,
-  onDeleteTask: (key: number) => void;
+  onDeleteTask: (key: string) => void;
+  onCheckTask: (key: string) => void;
 }
 
-export function Task({ task, onDeleteTask }: ITaskProps) {
+export function Task({ task, onDeleteTask, onCheckTask }: ITaskProps) {
   const { content, id, isChecked } = task;
   const [checked, setChecked] = useState(isChecked);
 
-  function handleChecked() {
+  function handleCheckTask() {
+    onCheckTask(id);
     setChecked(!checked);
   }
 
@@ -28,11 +25,9 @@ export function Task({ task, onDeleteTask }: ITaskProps) {
   return (
     <div className={styles.task}>
       <div>
-        <input type='checkbox' checked={checked} onChange={handleChecked} className={styles.checkBox} />
-      </div>
-      <span>
+        <input type='checkbox' checked={checked} onChange={handleCheckTask} className={styles.checkBox} />
         <label className={checked ? styles.contentChecked : styles.content}>{content}</label>
-      </span>
+      </div>
       <button onClick={handleDeleteTask} className={styles.trash}>
         <HiOutlineTrash size={16} />
       </button>
